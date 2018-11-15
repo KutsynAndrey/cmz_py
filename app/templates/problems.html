@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+   <head>
+       {% include 'header.html' %}
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/problems.css') }}" />
+   </head>
+   <body>
+    {% include 'nav.html' %}
+      <table class="problems-table">
+        <tr>
+          <td class="problems-column1 problems-main">ID</td>
+          <td class="problems-column2 problems-main">Задача</td>
+          <td class="problems-column3 problems-main">Тема</td>
+          <td class="problems-column4 problems-main">Сложность</td>
+        </tr>
+          <tr>
+            <td class="problems-column1"></td>
+            <td class="problems-column2">
+              <a href="/problem/"></a>
+            </td>
+            <td class="problems-column3"></td>
+            <td class="problems-column4"></td>
+          </tr>
+      </table>
+   </body>
+</html>	</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+   <head>
+       {% include 'header.html' %}
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/status.css') }}" />
+   </head>
+   <body>
+    {% include 'nav.html' %}
+      <table class="status-table">
+        <tr>
+          <td class="status-column1 status-main">ID</td>
+          <td class="status-column2 status-main">Дата</td>
+          <td class="status-column3 status-main">Автор</td>
+          <td class="status-column4 status-main">Задача</td>
+          <td class="status-column5 status-main">Вердикт</td>
+          <td class="status-column6 status-main">Память</td>
+          <td class="status-column7 status-main">Время</td>
+        </tr>
+      </table>
+   </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+   <head>
+       {% include 'header.html' %}
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/problem.css') }}" />
+   </head>
+   <body>
+    {% include 'nav.html' %}
+      <div class="problem-bar">
+        <div class="problem-banner problem-title"></div>
+        <div class="problem-content"></div>
+        <br>
+        <div class="problem-banner">Входные данные</div>
+        <div class="problem-content"></div>
+        <br>
+        <div class="problem-banner">Выходные данные</div>
+        <div class="problem-content"></div>
+        <br>
+        <div class="problem-banner">Примеры</div>
+        <table class="problem-table">
+          <tr>
+            <td class="problem-column1 problem-main">ID</td>
+            <td class="problem-column2 problem-main">Stdin</td>
+            <td class="problem-column3 problem-main">Stdout</td>
+          </tr>
+        </table>
+        <br>
+        <div class="problem-banner">Исходный код решения</div>
+        <form method = "post">
+        <textarea class="problem-input" name = "problemsol"></textarea>
+        <input type="submit" class="problem-button" value="Отправить">
+        </form>
+      </div>
+   </body>
+</html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+   <head>
+        {% include 'header.html' %}
+       <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/mainpage.css') }}" />
+   </head>
+   <body>
+        {% include 'nav.html' %}
+        <div class="index-bar">
+          <span class="index-banner"></span>
+          <div class="index-content"></div>
+        </div>
+   </body>
+</html>

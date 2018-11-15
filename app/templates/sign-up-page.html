@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% include 'header.html' %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/sign-up-page.css') }}" />
+  </head>
+  <body>
+   {% include 'nav.html' %}
+    <div class = "sign-up-page-block">
+    <form method="post" action="/sign-up-page">
+      <h1>Регистрация</h1>
+      <br>
+      <label><big>Никнейм</big></label>
+      <input type="text" class="sign-up-page-info" name="nick" placeholder="Введите ник" required>
+      <br><br>
+      <label><big>Полное имя</big></label>
+      <input type="text" class="sign-up-page-info" name="username" placeholder="Введите имя" id="pass" required>
+      <br><br>
+      <label><big>Учебное заведение</big></label>
+      <input type="text" class="sign-up-page-info" name="school" placeholder="В какой колонии ты?" required>
+      <br><br>
+      <label><big>Пароль</big></label>
+      <input type="password" class="sign-up-page-info" name="pass" placeholder="Пароль" required>
+      <br><br>
+      <label><big>Еще раз пароль</big></label>
+      <input type="password" class="sign-up-page-info" name="checkpass" placeholder="Для убедительности" required>
+      <br><br>
+      <input type="submit" class="sign-up-page-submit" value="Создать Аккаунт">
+    </form>
+    </div>
+  </body>
+</html>

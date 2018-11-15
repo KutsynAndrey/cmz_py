@@ -1,0 +1,49 @@
+.profile-all {
+  position: relative;
+  left: 50%;
+  width: 80%;
+  height: auto;
+  margin-left: -40%;
+  padding: 0 30px;
+  margin-bottom: 20px;
+}
+
+.profile-img {
+  position: relative;
+  float: left;
+  width: 220px;
+  height: 220px;
+  border-radius: 110px;
+  border: 1px solid black;
+  margin-right: 20px;
+}
+
+.profile-information {
+  font-size: 25px;
+  color: black;
+}
+
+.profile-nick {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 765px)
+{
+.profile-information {
+  text-align: center;
+  font-size: 4vw;
+}
+
+.profile-img {
+  float: none;
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  margin-right: initial;
+}
+
+.profile-nick {
+  font-size: 4.5vw;
+}
+}

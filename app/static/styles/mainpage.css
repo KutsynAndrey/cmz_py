@@ -1,0 +1,21 @@
+.index-bar {
+  position: relative;
+
+  left: 50%;
+  margin-left: -40%;
+
+  width: 80%;
+  border: 1px solid black;
+
+  padding: 30px;
+  padding-top: 10px;
+  padding-bottom: 15px;
+
+  margin-bottom: 20px;
+}
+
+.index-banner {
+  font-weight: bolder;
+  font-size: 30px;
+  padding-bottom: 0;
+}

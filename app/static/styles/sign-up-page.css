@@ -1,0 +1,29 @@
+.sign-up-page-block {
+  position: relative;
+  border: 1px solid black;
+  left: 50%;
+  margin-left: -40%;
+  width: 80%;
+  height: 595px;
+  padding: 0 30px;
+  margin-bottom: 20px;
+}
+
+.sign-up-page-info {
+  width: 100%;
+  font-size: 24px;
+}
+
+.sign-up-page-submit {
+  float: right;
+  height: 40px;
+  width: 200px;
+  font-size: 17px;
+  border-radius: 6px;
+  background-color: white;
+  border: 1px solid black;
+}
+
+.sign-up-page-submit:active {
+  color: red;
+}

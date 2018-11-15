@@ -1,0 +1,45 @@
+.status-table {
+  position: relative;
+
+  left: 50%;
+  margin-left: -40%;
+
+  width: 80%;
+  border: 1px solid black;
+  margin-bottom: 20px;
+}
+
+.status-table td {
+  padding: 5px 0;
+  position: relative;
+  border: 1px solid black;
+  text-align: center;
+}
+
+.status-main {
+  font-weight: bold;
+}
+
+.status-column1 {
+  width: 10%;
+}
+
+.status-column2 {
+  width: 15%;
+}
+
+.status-column6 {
+  width: 15%;
+}
+
+.status-ok{
+  color: #4CAF50;
+}
+
+.status-er{
+  color: #F44336;
+}
+
+.status-pending{
+  color: #FFEB3B;
+}
