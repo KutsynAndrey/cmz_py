@@ -4,6 +4,9 @@ from flask import request
 from app.db import User, Session
 
 
+db_session = Session()
+
+
 @app.route('/')
 def main_page():
     if 'is_logged' in session:
@@ -27,10 +30,8 @@ def problem_page():
 def sign_in_page():
     if request.method == 'POST':
         if request.form['nickname']:
-            session['is_logged'] = True
-            print(request.form['nickname'])
-            print(request.form['password'])
-            print(session['is_logged'])
+            sign_in(request.form['nickname'], request.form['password'])
+        if session['is_logged']:
             return redirect('/')
     return render_template('sign-in-page.html', session=session)
 
@@ -40,23 +41,21 @@ def sign_up_page():
     if request.method == 'POST':
         if request.form['pass'] != request.form['checkpass']:
             session['password_match_error'] = True
-        else:
+            session['identiсal_nick_error'] = False
+        elif check_identity():
+            session['identiсal_nick_error'] = True
             session['password_match_error'] = False
-            db_session = Session()
-            user = User(request.form['name'],
-                        request.form['second_name'],
-                        request.form['nick'],
-                        request.form['pass'],
-                        request.form['email']
-                        )
-            db_session.add(user)
-            db_session.commit()
-
+        else:
+            add_user()
+            session['identiсal_nick_error'] = False
+            session['password_match_error'] = False
     return render_template('sign-up-page.html', session=session)
+
 
 @app.route('/successfully-add')
 def successfully_add():
     pass
+
 
 @app.route('/status')
 def status_page():
@@ -67,13 +66,52 @@ def status_page():
 def problems_page():
     return render_template('problems.html', session=session)
 
+
 @app.route('/admin')
 def admin_page():
-    return render_template('admin/admin.html', session=session)
+    return render_template('admin.html', session=session)
+
 
 @app.route('/logout')
 def logout():
     session['is_logged'] = False
     return redirect('/')
+
+
+def add_user():
+    session['password_match_error'] = False
+    user = User(request.form['name'],
+                request.form['second_name'],
+                request.form['nick'],
+                request.form['pass'],
+                request.form['email']
+                )
+    db_session.add(user)
+    db_session.commit()
+
+
+def check_identity():
+    for person in db_session.query(User):
+        if person.nickname == request.form['nick']:
+            return True
+    return False
+
+
+def sign_in(nickname, password):
+    obj = db_session.query(User).filter_by(nickname=nickname).first()
+    if obj is None:
+        session['Wrong_nickname'] = True
+    elif obj.password != password:
+        session['Wrong_password'] = True
+        session['Wrong_nickname'] = False
+    else:
+        session['Wrong_nickname'] = False
+        session['Wrong_password'] = False
+        session['is_logged'] = True
+        session['nickname'] = obj.nickname
+        session['name'] = obj.name
+        session['second_name'] = obj.second_name
+        session['email'] = obj.email
+
 
 

@@ -35,6 +35,10 @@
     <script>
             alert("Пароли не совпадают")
     </script>
+   {% elif session['identiсal_nick_error'] %}
+   <script>
+            alert("Данный никнейм занят")
+   </script>
    {% endif %}
   </body>
 </html>

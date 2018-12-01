@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb62b2eb-6411-412d-a20d-f124c54a1c33" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/app/db.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/templates/admin.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/db.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/db.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/admin/admin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/nav.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/nav.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/admin/admin.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/sign-in-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/sign-in-page.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/sign-up-page.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/sign-up-page.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -41,9 +42,9 @@
         <entry file="file://$PROJECT_DIR$/app/db.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
-              <caret line="4" column="41" selection-end-line="33" />
+              <caret line="4" column="44" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
               <folding>
-                <element signature="e#0#78#0" expanded="true" />
+                <element signature="e#0#83#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -61,8 +62,8 @@
       <file leaf-file-name="routes.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/routes.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="795">
-              <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
+            <state relative-caret-position="1500">
+              <caret line="100" column="69" selection-start-line="100" selection-start-column="69" selection-end-line="100" selection-end-column="69" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -70,11 +71,29 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="admin.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/templates/admin.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="profile.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/templates/profile.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="571">
+              <caret line="41" column="7" lean-forward="true" selection-end-line="41" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="sign-up-page.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/templates/sign-up-page.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="512">
-              <caret line="35" column="38" selection-start-line="35" selection-start-column="38" selection-end-line="35" selection-end-column="38" />
+            <state relative-caret-position="524">
+              <caret line="37" column="40" selection-start-line="37" selection-start-column="40" selection-end-line="37" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -82,8 +101,8 @@
       <file leaf-file-name="sign-in-page.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/templates/sign-in-page.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="15" lean-forward="true" selection-start-column="15" selection-end-column="15" />
+            <state relative-caret-position="375">
+              <caret line="25" column="51" selection-start-line="25" selection-start-column="51" selection-end-line="25" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -112,8 +131,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/templates/admin.html" />
-        <option value="$PROJECT_DIR$/app/templates/sign-in-page.html" />
         <option value="$PROJECT_DIR$/app/__init__.py" />
         <option value="$PROJECT_DIR$/app/templates/nav.html" />
         <option value="$PROJECT_DIR$/app/templates/admin/admin.html" />
@@ -121,9 +138,12 @@
         <option value="$PROJECT_DIR$/app/db/data.py" />
         <option value="$PROJECT_DIR$/app/db/__init__.py" />
         <option value="$PROJECT_DIR$/app/data.py" />
-        <option value="$PROJECT_DIR$/app/templates/sign-up-page.html" />
-        <option value="$PROJECT_DIR$/app/routes.py" />
         <option value="$PROJECT_DIR$/app/config.py" />
+        <option value="$PROJECT_DIR$/app/templates/sign-up-page.html" />
+        <option value="$PROJECT_DIR$/app/templates/profile.html" />
+        <option value="$PROJECT_DIR$/app/templates/sign-in-page.html" />
+        <option value="$PROJECT_DIR$/app/templates/admin.html" />
+        <option value="$PROJECT_DIR$/app/routes.py" />
         <option value="$PROJECT_DIR$/app/db.py" />
       </list>
     </option>
@@ -170,6 +190,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/templates" />
       <recent name="$PROJECT_DIR$/app" />
       <recent name="$PROJECT_DIR$/app/templates/admin" />
     </key>
@@ -186,7 +207,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.routes">
     <configuration name="db" type="PythonConfigurationType" factoryName="Python">
       <module name="cmz_py" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -205,6 +226,33 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
+    <configuration name="routes" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="cmz_py" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app/routes.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.db" />
+      <item itemvalue="Python.routes" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.routes" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -223,12 +271,12 @@
     <frame x="65" y="24" width="928" height="1056" extended-state="4" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21767241" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.21767241" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="10" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3281893" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3281893" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -241,18 +289,30 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" />
     </layout>
+    <layout-to-restore>
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3281893" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21767241" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Python Console" order="10" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/db.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="7" column="31" lean-forward="true" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -260,7 +320,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/admin/admin.html">
+    <entry file="file://$PROJECT_DIR$/app/templates/admin.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" selection-start-line="9" selection-end-line="9" />
@@ -326,7 +386,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/admin/admin.html">
+    <entry file="file://$PROJECT_DIR$/app/templates/admin.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" selection-start-line="9" selection-end-line="9" />
@@ -389,7 +449,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/admin/admin.html">
+    <entry file="file://$PROJECT_DIR$/app/templates/admin.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" selection-start-line="9" selection-end-line="9" />
@@ -445,7 +505,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/admin/admin.html">
+    <entry file="file://$PROJECT_DIR$/app/templates/admin.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" selection-start-line="9" selection-end-line="9" />
@@ -529,45 +589,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/db/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/app/templates/admin/admin.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/nav.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="24" column="30" lean-forward="true" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/sign-in-page.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="15" lean-forward="true" selection-start-column="15" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/sign-up-page.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="512">
-          <caret line="35" column="38" selection-start-line="35" selection-start-column="38" selection-end-line="35" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="23" selection-start-column="23" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -578,22 +603,64 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/sign-in-page.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="51" selection-start-line="25" selection-start-column="51" selection-end-line="25" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/sign-up-page.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="524">
+          <caret line="37" column="40" selection-start-line="37" selection-start-column="40" selection-end-line="37" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/profile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="571">
+          <caret line="41" column="7" lean-forward="true" selection-end-line="41" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/admin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/routes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="795">
-          <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
+        <state relative-caret-position="1500">
+          <caret line="100" column="69" selection-start-line="100" selection-start-column="69" selection-end-line="100" selection-end-column="69" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="23" selection-start-column="23" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/db.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
-          <caret line="4" column="41" selection-end-line="33" />
+          <caret line="4" column="44" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
           <folding>
-            <element signature="e#0#78#0" expanded="true" />
+            <element signature="e#0#83#0" expanded="true" />
           </folding>
         </state>
       </provider>

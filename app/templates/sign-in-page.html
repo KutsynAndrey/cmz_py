@@ -17,5 +17,15 @@
         <br><br>
         <input id='sign-in-page-but' type="submit" value='Войти'>
       </form>
+    {% if session['Wrong_password'] %}
+    <script>
+        alert("Неверный пароль")
+    </script>
+    {% elif session['Wrong_nickname'] %}
+    <script>
+        alert("Аккаунта с таким ником не существует")
+    </script>
+    {% endif %}
+
    </body>
 </html>
