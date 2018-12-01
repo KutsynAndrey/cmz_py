@@ -12,18 +12,26 @@
       </li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
+        {% if session['is_logged'] %}
         <li>
           <a href="/profile">Профиль</a>
         </li>
+        {% endif %}
+        {% if session['is_logged'] %}
         <li>
           <a href="/logout">Выход</a>
         </li>
+        {% endif %}
+        {% if session['is_logged'] == False %}
         <li>
           <a href="/sign-in-page">Вход</a>
         </li>
+        {% endif %}
+         {% if session['is_logged'] == False %}
         <li>
           <a href="/sign-up-page">Регистрация</a>
         </li>
+        {% endif %}
     </ul>
   </div>
 </nav>
