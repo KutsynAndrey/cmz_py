@@ -31,6 +31,10 @@ def sign_in_page():
     if request.method == 'POST':
         if request.form['nickname']:
             sign_in(request.form['nickname'], request.form['password'])
+            if session['admin']:
+                return redirect('/admin')
+            else:
+                return redirect('/profile')
         if session['is_logged']:
             return redirect('/')
     return render_template('sign-in-page.html', session=session)
@@ -67,14 +71,17 @@ def problems_page():
     return render_template('problems.html', session=session)
 
 
-@app.route('/admin')
+@app.route('/admin', methods=['GET', 'POST'])
 def admin_page():
+    if request.method == 'GET' and (not('admin' in session) or session['admin'] == False):
+        return redirect('/')
+
     return render_template('admin.html', session=session)
 
 
 @app.route('/logout')
 def logout():
-    session['is_logged'] = False
+    session.clear()
     return redirect('/')
 
 
@@ -84,7 +91,8 @@ def add_user():
                 request.form['second_name'],
                 request.form['nick'],
                 request.form['pass'],
-                request.form['email']
+                request.form['email'],
+                False
                 )
     db_session.add(user)
     db_session.commit()
@@ -112,6 +120,13 @@ def sign_in(nickname, password):
         session['name'] = obj.name
         session['second_name'] = obj.second_name
         session['email'] = obj.email
+        session['admin'] = obj.admin
+
+
+
+
+
+
 
 
 

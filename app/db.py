@@ -1,4 +1,4 @@
-from sqlalchemy import create_engine, Table, Column, Integer, String, MetaData,Text
+from sqlalchemy import create_engine, Table, Column, Integer, String, MetaData, Text, Boolean
 from sqlalchemy.orm import mapper, sessionmaker
 
 
@@ -12,7 +12,8 @@ user_table = Table('users', metadata,
                    Column('second_name', String(50)),
                    Column('nickname', String(50)),
                    Column('password', String(50)),
-                   Column('email', String(50))
+                   Column('email', String(50)),
+                   Column('admin', Boolean)
                    )
 
 news_table = Table('news', metadata,
@@ -21,19 +22,21 @@ news_table = Table('news', metadata,
                    Column('text', Text)
                    )
 
+
 metadata.create_all(engine)
 
 
 class User(object):
-    def __init__(self, name, second_name, nickname, password, email):
+    def __init__(self, name, second_name, nickname, password, email, admin):
         self.name = name
         self.nickname = nickname
         self.second_name = second_name
         self.password = password
         self.email = email
+        self.admin = False
 
     def __repr__(self):
-        return "<User('%s', '%s', password --> '%s', email: '%s' )>" % (self.name, self.second_name, self.password, self.email)
+        return "<User('%s', '%s', '%s', '%s', '%d' )>" % (self.name, self.second_name, self.password, self.email, self.admin)
 
 
 class News(object):
