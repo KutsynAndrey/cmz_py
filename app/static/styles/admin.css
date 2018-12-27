@@ -1,0 +1,53 @@
+
+
+
+
+
+
+.button-admin-panel{
+width: 50%;
+height: 50%;
+float: left;
+}
+
+.admin-panel{
+width: 100%;
+}
+
+.profile-all{
+height: 230px;
+}
+
+.profile-img {
+  float: left;
+  width: 220px;
+  height: 220px;
+  border-radius: 110px;
+  border: 1px solid black;
+  margin-right: 20px;
+}
+
+.admin-panel{
+  height: 300px;
+}
+
+.button{
+  height: 100%;
+  width: 100%;
+}
+
+.add-news-params{
+  display: none;
+  margin-top: 30px;
+}
+
+.add-admin-params{
+  display: none;
+  margin-top: 30px;
+}
+
+.add-problem-params{
+  display:none;
+  margin-top: 30px;
+}
+

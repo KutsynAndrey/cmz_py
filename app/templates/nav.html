@@ -14,7 +14,7 @@
     <ul class="nav navbar-nav navbar-right">
         {% if session['is_logged'] %}
         <li>
-          <a href="/profile">Профиль</a>
+          <a href="/profile/{{session['nickname']}}">Профиль</a>
         </li>
         {% endif %}
         {% if session['is_logged'] %}

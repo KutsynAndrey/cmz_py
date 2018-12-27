@@ -1,19 +1,80 @@
 <!DOCTYPE html>
 <html>
    <head>
-       {% include 'header.html' %}
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/profile.css') }}" />
+        {% include 'header.html' %}
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/admin.css') }}" />
    </head>
    <body>
-    {% include 'nav.html' %}
+   {% include 'nav.html' %}
+        <div class = "profile">
         <div class='profile-all'>
-          <div class='profile-information'>
             <img class="profile-img">
-            <div class="profile-nick">{{ session['name'] }} {{ session['second_name'] }} (@{{ session['nickname'] }})</div>
-            
+              <div class="profile-nick"><h3 class = "admin" >Admin</h3> {{ session['name'] }} {{ session['second_name'] }} (@{{ session['nickname'] }})</div>
           </div>
+            <div class = "admin-panel">
+              <div class = "add-news button-admin-panel">
+                  <button id = "add-news" class = "button" onclick="show_news_params()"><h4>Добавить новость</h4></button>
+              </div>
+              <div class = "add-new-admin button-admin-panel">
+                  <button id = "add-new-admin" class = "button" onclick="show_admin_params()"><h4>Добавить админа</h4></button>
+              </div>
+              <div class = "add-new-problem button-admin-panel">
+                  <button id = "add-new-problem" class = "button" onclick="show_problem_params()"><h4>Добавить задачу</h4></button>
+              </div>
+              <div class = "add-new-contest button-admin-panel">
+                  <button id = "add-new-contest" class = "button" onclick="show_contest_params()"><h4>Добавить контест</h4></button>
+              </div>
+            </div>
         </div>
-        <script>
+            <div class = "add-news-params" id="news">
+                <form method="post">
+                    <p>Заголовок Новости</p>
+                    <input type="text" name="new_label">
+                    <p>Что можешь рассказать?</p>
+                    <textarea name="new_body">
+                    </textarea>
+                    <button type="submit"><p>Добавить новость</p></button>
+                    <button class = "hide" onclick="hide_news_params()">Закрыть</button>
+                </form>
+            </div>
+            <div class = "add-admin-params" id="admin">
+                <form method="post">
+                    <p>Имя</p>
+                    <input type="text" name="name">
+                    <p>Фамилия</p>
+                    <input type="text" name="second_name">
+                    <p>Никнейм</p>
+                    <input type = text name="nick">
+                    <p>Почта</p>
+                    <input type = "text" name="email">
+                    <p>Пароль</p>
+                    <input type="text" name="pass">
+                    <button type="submit"><p>Добавить админа</p></button>
+                    <button class = "hide" onclick="hide_admin_params()">Закрыть</button>
+                </form>
+            </div>
+            <div class = "add-problem-params" id="problem">
+                <form method="post">
+                    <p>Название задачи</p>
+                    <input type="text" name="problem_name">
+                    <p>Условие</p>
+                    <textarea name="problem_body">
+                    </textarea>
+                    <p>Решение</p>
+                    <textarea name="problem_solution">
+                    </textarea>
+                    <p>Пример на вход</p>
+                    <textarea name="problem_in">
+                    </textarea>
+                    <p>Пример на выход</p>
+                    <textarea name="problem_out">
+                    </textarea>
+                    <button type="submit"><p>Добавить задачу</p></button>
+                    <button class = "hide" onclick="hide_problem_params()">Закрыть</button>
+                </form>
+            </div>
+        <script src="{{ url_for('static',filename='animation.js') }}">
         </script>
    </body>
 </html>

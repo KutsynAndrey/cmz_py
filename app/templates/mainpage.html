@@ -6,9 +6,11 @@
    </head>
    <body>
         {% include 'nav.html' %}
+        {% for new in news_tuple %}
         <div class="index-bar">
-          <span class="index-banner"></span>
-          <div class="index-content"></div>
+          <span class="index-banner"><h2>{{ new.title }}</h2></span>
+          <div class="index-content">{{ new.text }}</div>
         </div>
+        {% endfor %}
    </body>
 </html>

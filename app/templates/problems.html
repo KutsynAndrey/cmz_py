@@ -13,14 +13,16 @@
           <td class="problems-column3 problems-main">Тема</td>
           <td class="problems-column4 problems-main">Сложность</td>
         </tr>
+          {% for problem in problems_tuple %}
           <tr>
-            <td class="problems-column1"></td>
+            <td class="problems-column1">{{ problem.id }}</td>
             <td class="problems-column2">
-              <a href="/problem/"></a>
+              <a href="/problem/{{ problem.id }}">{{ problem.problem_title }}</a>
             </td>
             <td class="problems-column3"></td>
             <td class="problems-column4"></td>
           </tr>
+          {% endfor %}
       </table>
    </body>
 </html>	</html>

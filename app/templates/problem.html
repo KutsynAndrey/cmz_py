@@ -7,8 +7,8 @@
    <body>
     {% include 'nav.html' %}
       <div class="problem-bar">
-        <div class="problem-banner problem-title"></div>
-        <div class="problem-content"></div>
+        <div class="problem-banner problem-title">{{ problem.problem_title }}</div>
+        <div class="problem-content">{{ problem.problem_body }}</div>
         <br>
         <div class="problem-banner">Входные данные</div>
         <div class="problem-content"></div>
@@ -22,6 +22,11 @@
             <td class="problem-column1 problem-main">ID</td>
             <td class="problem-column2 problem-main">Stdin</td>
             <td class="problem-column3 problem-main">Stdout</td>
+          </tr>
+          <tr>
+              <td class="problem-column1 problem-main"></td>
+              <td class="problem-column2 problem-main">{{ problem.problem_in }}</td>
+              <td class="problem-column3 problem-main">{{ problem.problem_out }}</td>
           </tr>
         </table>
         <br>

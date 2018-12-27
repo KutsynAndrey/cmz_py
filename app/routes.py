@@ -1,7 +1,7 @@
 from app import app
 from flask import render_template, session, redirect
 from flask import request
-from app.db import User, Session
+from app.db import User, Session, News, Problem
 
 
 db_session = Session()
@@ -13,17 +13,23 @@ def main_page():
         pass
     else:
         session['is_logged'] = False
-    return render_template('mainpage.html', session=session)
+    news_tuple = db_session.query(News).all()
+    return render_template('mainpage.html', session=session, news_tuple=news_tuple)
 
 
-@app.route('/profile')
-def profile_page():
+@app.route('/profile/<nickname>')
+def profile_page(nickname):
+    if 'admin' in session:
+        if session['admin']:
+            return redirect('/admin')
     return render_template('profile.html', session=session)
 
 
-@app.route('/problem')
-def problem_page():
-    return render_template('problem.html', session=session)
+@app.route('/problem/<int:problem_id>')
+def problem_page(problem_id):
+    problem = db_session.query(Problem).filter_by(id=problem_id).first()
+    print(problem)
+    return render_template('problem.html', session=session, problem=problem)
 
 
 @app.route('/sign-in-page', methods=['GET', 'POST'])
@@ -31,10 +37,12 @@ def sign_in_page():
     if request.method == 'POST':
         if request.form['nickname']:
             sign_in(request.form['nickname'], request.form['password'])
-            if session['admin']:
+            if 'admin' not in session:
+                return redirect('/sign-in-page')
+            elif session['admin']:
                 return redirect('/admin')
             else:
-                return redirect('/profile')
+                return redirect('/profile/'+session['nickname'])
         if session['is_logged']:
             return redirect('/')
     return render_template('sign-in-page.html', session=session)
@@ -50,7 +58,7 @@ def sign_up_page():
             session['identiсal_nick_error'] = True
             session['password_match_error'] = False
         else:
-            add_user()
+            add_user(False)
             session['identiсal_nick_error'] = False
             session['password_match_error'] = False
     return render_template('sign-up-page.html', session=session)
@@ -68,14 +76,21 @@ def status_page():
 
 @app.route('/problems')
 def problems_page():
-    return render_template('problems.html', session=session)
+    problems_tuple = db_session.query(Problem).all()
+    return render_template('problems.html', session=session, problems_tuple=problems_tuple)
 
 
 @app.route('/admin', methods=['GET', 'POST'])
 def admin_page():
-    if request.method == 'GET' and (not('admin' in session) or session['admin'] == False):
+    if request.method == 'GET' and (not('admin' in session) or not session['admin']):
         return redirect('/')
-
+    elif request.method == 'POST':
+            if 'nick' in request.form:
+                add_user(True)
+            elif 'new_label' in request.form:
+                add_new()
+            elif 'problem_name' in request.form:
+                add_problem()
     return render_template('admin.html', session=session)
 
 
@@ -85,16 +100,35 @@ def logout():
     return redirect('/')
 
 
-def add_user():
+def add_user(admin):
     session['password_match_error'] = False
     user = User(request.form['name'],
                 request.form['second_name'],
                 request.form['nick'],
                 request.form['pass'],
                 request.form['email'],
-                False
+                admin
                 )
     db_session.add(user)
+    db_session.commit()
+
+
+def add_new():
+    new = News(request.form['new_label'],
+               request.form['new_body']
+               )
+    db_session.add(new)
+    db_session.commit()
+
+
+def add_problem():
+    problem = Problem(request.form['problem_name'],
+                      request.form['problem_body'],
+                      request.form['problem_solution'],
+                      request.form['problem_in'],
+                      request.form['problem_out']
+                      )
+    db_session.add(problem)
     db_session.commit()
 
 
@@ -121,12 +155,4 @@ def sign_in(nickname, password):
         session['second_name'] = obj.second_name
         session['email'] = obj.email
         session['admin'] = obj.admin
-
-
-
-
-
-
-
-
-
+        print("\n\n\n admin --------> '%s'" % obj.admin)
