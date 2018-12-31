@@ -19,8 +19,8 @@
             <td class="problems-column2">
               <a href="/problem/{{ problem.id }}">{{ problem.problem_title }}</a>
             </td>
-            <td class="problems-column3"></td>
-            <td class="problems-column4"></td>
+            <td class="problems-column3">{{ problem.problem_theme }}</td>
+            <td class="problems-column4">{{ problem.complexity }}%</td>
           </tr>
           {% endfor %}
       </table>

@@ -2,7 +2,7 @@ from app import app
 from flask import render_template, session, redirect
 from flask import request
 from app.db import User, Session, News, Problem
-
+from test_system.ts import test
 
 db_session = Session()
 
@@ -25,10 +25,13 @@ def profile_page(nickname):
     return render_template('profile.html', session=session)
 
 
-@app.route('/problem/<int:problem_id>')
+@app.route('/problem/<int:problem_id>', methods=['GET', 'POST'])
 def problem_page(problem_id):
     problem = db_session.query(Problem).filter_by(id=problem_id).first()
-    print(problem)
+    if request.method == 'POST':
+        if 'problem_solution' in request.form:
+            test(request.form['problem_solution'], 'a_plus_b', path='test_system')
+
     return render_template('problem.html', session=session, problem=problem)
 
 
@@ -126,8 +129,11 @@ def add_problem():
                       request.form['problem_body'],
                       request.form['problem_solution'],
                       request.form['problem_in'],
-                      request.form['problem_out']
+                      request.form['problem_out'],
+                      request.form['theme'],
+                      request.form['complexity']
                       )
+    print(problem)
     db_session.add(problem)
     db_session.commit()
 

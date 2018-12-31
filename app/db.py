@@ -28,11 +28,30 @@ problem_table = Table('problem', metadata,
                       Column('problem_body', Text),
                       Column('problem_solution', Text),
                       Column('problem_in', Text),
-                      Column('problem_out', Text)
-                     )
+                      Column('problem_out', Text),
+                      Column('problem_theme', String(50)),
+                      Column('complexity', String(10))
+                      )
+
+solved_problem = Table('solved', metadata,
+                       Column('id', Integer, primary_key=True),
+                       Column('user_id', Integer),
+                       Column('problem_id', Integer),
+                       Column('is_solved', Boolean)
+                       )
 
 
 metadata.create_all(engine)
+
+
+class Solved(object):
+    def __init__(self, user_id, problem_id, is_solved):
+        self.user_id = user_id
+        self.problem_id = problem_id
+        self.is_solved = is_solved
+
+    def __repr__(self):
+        return "<User('%d') problem('%d') is solved?('%d')>" % (self.user_id, self.problem_id, self.is_solved)
 
 
 class User(object):
@@ -58,17 +77,20 @@ class News(object):
 
 
 class Problem(object):
-    def __init__(self, title, body, problem_solution, problem_in, problem_out):
+    def __init__(self, title, body, problem_solution, problem_in, problem_out, problem_theme, complexity):
         self.problem_title = title
         self.problem_body = body
         self.problem_solution = problem_solution
         self.problem_in = problem_in
         self.problem_out = problem_out
+        self.problem_theme = problem_theme
+        self.complexity = complexity
 
-    def __repr__ (self):
-        return "Было лень писать"
+    def __repr__(self):
+        return "<title>"
 
 
 mapper(User, user_table)
 mapper(News, news_table)
 mapper(Problem, problem_table)
+mapper(Solved, solved_problem)
