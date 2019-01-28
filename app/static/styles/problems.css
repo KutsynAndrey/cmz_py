@@ -25,9 +25,17 @@
 }
 
 .problems-column2 {
-    width: 36%;
+    width: 30%;
 }
 
 .problems-column3 {
-    width: 36%;
+    width: 30%;
+}
+
+.problems-column4 {
+    width: 20%
+}
+
+.problems-column5 {
+    width: 10%
 }

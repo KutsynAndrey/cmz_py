@@ -10,21 +10,17 @@
         <tr>
           <td class="status-column1 status-main">ID</td>
           <td class="status-column2 status-main">Дата</td>
-          <td class="status-column3 status-main">Автор</td>
           <td class="status-column4 status-main">Задача</td>
           <td class="status-column5 status-main">Вердикт</td>
-          <td class="status-column6 status-main">Память</td>
           <td class="status-column7 status-main">Время</td>
         </tr>
-          {% for item in results %}
+          {% for item in my_result %}
         <tr>
           <td class="status-column1 status-main">{{ item.id }}</td>
           <td class="status-column2 status-main">{{ item.time }}</td>
-          <td class="status-column3 status-main">{{ item.author }}</td>
             <td class="status-column4 status-main"><a href="/problem/{{ item.problem_id }}">{{ item.problem_title }}</a></td>
-          <td class="status-column5 status-main">{{ item.verdict }}</td>
-          <td class="status-column6 status-main">{{ item.memory }}</td>
-          <td class="status-column7 status-main">{{ item.mid_compilation_time }}</td>
+            <td class="status-column5 status-main"><a href = "/result/{{ item.problem_id }}/{{ item.time }}">{{ item.verdict }}</a></td>
+          <td class="status-column7 status-main">{{ item.mid_compilation_time}}</td>
         </tr>
           {% endfor %}
       </table>

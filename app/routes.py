@@ -2,7 +2,9 @@ from app import app
 from flask import render_template, session, redirect
 from flask import request
 from app.db import User, Session, News, Problem
+from app.db import Status
 from test_system.ts import test
+from datetime import datetime
 
 db_session = Session()
 
@@ -30,7 +32,37 @@ def problem_page(problem_id):
     problem = db_session.query(Problem).filter_by(id=problem_id).first()
     if request.method == 'POST':
         if 'problem_solution' in request.form:
-            test(request.form['problem_solution'], 'a_plus_b', path='test_system')
+            session['all_result'], err = test(request.form['problem_solution'], problem.problem_title)
+            if err == "not found":
+                t = time_now(str(datetime.now()))
+                add_solution(problem_id,
+                             session['all_result'][0],
+                             session['all_result'][1],
+                             t,
+                             problem.problem_theme,
+                             problem.problem_title,
+                             session['all_result'][2],
+                             request.form['problem_solution'],
+                             err,
+                             session['all_result'][3],
+                             str(session['all_result'][4])
+                             )
+
+            else:
+                t = time_now(str(datetime.now()))
+                add_solution(problem_id,
+                             session['all_result'][0],
+                             session['all_result'][1],
+                             t,
+                             problem.problem_theme,
+                             problem.problem_title,
+                             session['all_result'][2],
+                             request.form['problem_solution'],
+                             err,
+                             session['all_result'][3],
+                             str(session['all_result'][4])
+                             )
+            return redirect('/result/' + str(problem_id) + '/' + t)
 
     return render_template('problem.html', session=session, problem=problem)
 
@@ -72,9 +104,11 @@ def successfully_add():
     pass
 
 
-@app.route('/status')
+@app.route('/status', methods=['GET'])
 def status_page():
-    return render_template('status.html', session=session)
+    results = db_session.query(Status).order_by('time').all()
+    results.reverse()
+    return render_template('status.html', session=session, results=results)
 
 
 @app.route('/problems')
@@ -103,6 +137,25 @@ def logout():
     return redirect('/')
 
 
+@app.route('/result/<int:problem_id>/<add_data>', methods=['GET'])
+def show_result(problem_id, add_data):
+    result = db_session.query(Status).filter_by(problem_id=problem_id, user_id=session['user_id'], time=add_data).first()
+    t = result.tests_result.split("\n")
+    t2 = result.compilation_time.split("\n")
+    code = result.solution.split("\n")
+    error = result.error.split("\n")
+    m = result.memory.split("\n")
+    print(t)
+    return render_template('result.html', session=session, tests=t, size=len(t), time=t2, err=error, code=code, ram=m)
+
+
+@app.route('/sends', methods=['GET'])
+def my_sends():
+    my_result = db_session.query(Status).filter_by(user_id=session['user_id']).order_by("time").all()
+    my_result.reverse()
+    return render_template('my-sends.html', session=session, my_result=my_result)
+
+
 def add_user(admin):
     session['password_match_error'] = False
     user = User(request.form['name'],
@@ -110,7 +163,8 @@ def add_user(admin):
                 request.form['nick'],
                 request.form['pass'],
                 request.form['email'],
-                admin
+                admin,
+                time_now(str(datetime.now()))
                 )
     db_session.add(user)
     db_session.commit()
@@ -118,7 +172,8 @@ def add_user(admin):
 
 def add_new():
     new = News(request.form['new_label'],
-               request.form['new_body']
+               request.form['new_body'],
+               time_now(str(datetime.now()))
                )
     db_session.add(new)
     db_session.commit()
@@ -161,4 +216,37 @@ def sign_in(nickname, password):
         session['second_name'] = obj.second_name
         session['email'] = obj.email
         session['admin'] = obj.admin
+        session['user_id'] = obj.id
         print("\n\n\n admin --------> '%s'" % obj.admin)
+
+
+def time_now(time):
+    twms = ''
+    for i in time:
+        if i == '.':
+            break
+        twms += i
+
+    return twms
+
+
+def add_solution(problem_id, result, verdict, t, theme, title, time_compilation, solution, error, ram, mct):
+    send = Status(session['user_id'],
+                  problem_id,
+                  result,
+                  verdict,
+                  t,
+                  theme,
+                  title,
+                  time_compilation,
+                  ram,
+                  session['nickname'],
+                  solution,
+                  error,
+                  mct
+                  )
+    db_session.add(send)
+    db_session.commit()
+
+
+

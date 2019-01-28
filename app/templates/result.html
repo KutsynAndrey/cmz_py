@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+   <head>
+        {% include 'header.html' %}
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/result.css') }}"/>
+   </head>
+   <body>
+    {% include 'nav.html' %}
+    <div class="main-block">
+        <h2>Source</h2>
+      <div class = "solution-code-block">
+          {% for line in code %}
+          {{ line }}
+          <br>
+          {% endfor %}
+      </div>
+        <h2>Errors</h2>
+      <div class = "error-code-block">
+          {% for line in err %}
+          {{ line }}
+          <br>
+          {% endfor %}
+      </div>
+      <table class="tests-table">
+        <tr>
+            <td class="tests-number tests-main">Тест</td>
+            <td class="tests-time tests-main">Время</td>
+            <td class = "test-memory test-main">Память</td>
+            <td class="result-number tests-main">Результат</td>
+        </tr>
+          {% for test in range(size-1) %}
+        <tr>
+            <td class="tests-number tests-main">{{ test+1 }}</td>
+            <td class="tests-time tests-main">{{ time[test] }}</td>
+            <td class = "test-memory test-main">{{ ram[test] }}кб</td>
+            <td class="result-number tests-main">{{ tests[test] }}</td>
+        </tr>
+          {% endfor %}
+      </table>
+    </div>
+   </body>
+</html>

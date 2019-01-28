@@ -1,0 +1,55 @@
+
+.main-block {
+    margin-top: 5%;
+}
+
+.tests-table {
+    position: relative;
+
+    left: 5%;
+    width: 30%;
+    border: 1px solid black;
+}
+
+.solution-code-block {
+    border: 2px solid black;
+    width: 50%;
+    float: left;
+}
+
+.error-code-block {
+    border: 2px solid black;
+    width: 50%;
+    float: right;
+}
+
+.tests-table td {
+    padding: 5px 0;
+    position: relative;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.tests-main {
+    font-weight: bold;
+}
+
+.tests-number {
+    width: 17%;
+}
+
+.tests-time {
+    width: 33%
+}
+
+.result-number {
+    width: 25%;
+}
+
+.test-memory {
+    width 25%
+}
+
+.problems-column3 {
+    width: 36%;
+}
