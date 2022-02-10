@@ -1,4 +1,4 @@
-# Online judge for Competetive Programming problems.
+# Online judge for Competitive Programming problems.
 
 ## Installing environment
 
